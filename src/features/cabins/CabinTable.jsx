@@ -2,6 +2,7 @@ import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import Empty from "../../ui/Empty";
 
 import { useCabin } from "./useCabin";
 import { useSearchParams } from "react-router-dom";
@@ -33,9 +34,9 @@ export default function CabinTable() {
     else return b[field] - a[field];
   });
 
-  console.log(sortedCabins);
-
   if (isLoading) return <Spinner />;
+
+  if (!cabins.length) return <Empty resourceName="cabins" />;
 
   return (
     <Menus>
