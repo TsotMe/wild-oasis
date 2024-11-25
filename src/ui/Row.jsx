@@ -3,22 +3,19 @@ import styled, { css } from "styled-components";
 const Row = styled.div`
   display: flex;
 
-  ${(props) => {
+  ${(props) =>
     props.type === "horizontal" &&
-      css`
-        justify-content: space-between;
-        align-items: center;
-      `;
-  }}
-  ${(props) => {
+    css`
+      justify-content: space-between;
+      align-items: center;
+    `}
+
+  ${(props) =>
     props.type === "vertical" &&
-      css`
-        flex-direction: column;
-        gap: 1.6rem;
-        justify-content: space-between;
-        align-items: center;
-      `;
-  }};
+    css`
+      flex-direction: column;
+      gap: 1.6rem;
+    `};
 `;
 
 Row.defaultProps = {
