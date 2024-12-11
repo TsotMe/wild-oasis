@@ -9,7 +9,7 @@ function CheckoutButton({ bookingId }) {
       size="small"
       $variation="secondary"
       onClick={() => checkout(bookingId)}
-      isDisabled={isCheckingOut}
+      disabled={isCheckingOut}
     >
       Check out
     </Button>
