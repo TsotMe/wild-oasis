@@ -32,7 +32,6 @@ function UpdateUserDataForm() {
       { fullName, avatar },
       {
         onSuccess: () => {
-          console.log(e);
           setAvatar("");
           e.target.reset();
         },
