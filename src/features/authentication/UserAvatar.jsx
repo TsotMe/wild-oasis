@@ -23,7 +23,7 @@ const Avatar = styled.img`
 
 export default function UserAvatar() {
   const { user } = useUser();
-  const { avatar, fullName } = user.user_metadata;
+  const { avatar_url: avatar, fullName } = user.user_metadata;
 
   return (
     <StyledUserAvatar>
