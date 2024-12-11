@@ -13,14 +13,12 @@ export default function Stats({
   numDays,
   cabinCount,
 }) {
-  const numBookings = bookings.length;
+  const numBookings = bookings?.length || 0;
 
-  const sales = bookings.reduce(
-    (total, booking) => total + booking.totalPrice,
-    0
-  );
+  const sales =
+    bookings?.reduce((total, booking) => total + booking.totalPrice, 0) || 0;
 
-  const checkins = confirmedStays.length;
+  const checkins = confirmedStays?.length || 0;
 
   const occupation =
     confirmedStays.reduce((total, cur) => total + cur.numNights, 0) /
