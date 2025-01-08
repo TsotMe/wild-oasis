@@ -4,6 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
+import toast from "react-hot-toast";
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -11,15 +12,18 @@ function SignupForm() {
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
-  const { signup, isLoading } = useSignup();
+  const { isLoading } = useSignup();
 
-  function onSubmit({ fullName, email, password }) {
-    signup(
-      { fullName, email, password },
-      {
-        onSettled: () => reset(),
-      }
-    );
+  function onSubmit() {
+    toast.error("You don't have perrmission to create user");
+    reset();
+
+    // signup(
+    //   { fullName, email, password },
+    //   {
+    //     onSettled: () => reset(),
+    //   }
+    // );
   }
 
   return (
